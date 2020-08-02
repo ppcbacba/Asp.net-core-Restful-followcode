@@ -132,7 +132,8 @@ namespace Routine.APi
 
             services.AddDbContext<RoutineDbContext>(options =>
             {
-                options.UseSqlServer("Data Source=localhost;DataBase=routine;Integrated Security=SSPI");
+//                options.UseSqlServer("Data Source=localhost;DataBase=routine;Integrated Security=SSPI");
+                options.UseSqlServer("Data Source=(localdb)\\MSSQLLOCALDB;Initial Catalog=routine;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             });
 
             //轻量服务可以使用 Transient，每次从容器（IServiceProvider）中获取的都是一个新的实例
